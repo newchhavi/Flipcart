@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="text-center">
+                        <h1>Login</h1>
+                        <h6>Please enter the email && password!</h6>
+                    </div>
+
+
+                    <form>
+                        
+
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Email</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" name="email"  [(ngModel)]="loginObj.email">
+                          </div>
+
+                          
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="pass" [(ngModel)]="loginObj.password">
+                          </div>
+                        
+                        <button type="submit" class="btn btn-primary" (click)="onLogin()">Login</button>
+                    </form>
+                    <a routerLink="/signup">Already registration now click to Login!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

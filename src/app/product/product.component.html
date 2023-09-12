@@ -1,0 +1,94 @@
+<style>
+    .imo{
+  height: 511px;
+  padding: 23px;
+  /* background-color: black; */
+}
+.container-data{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+}
+@media (max-width:425px) {
+  .container-data{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-items: center;
+  }
+  
+}
+.content{
+    width: 80%;
+    border: 1px solid black;
+    padding: 10px 19px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.Addbtn{
+    outline: none;
+    border-radius: 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+.image{
+  width: 20%;
+}
+.image img{
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+</style>
+
+
+
+<app-header></app-header>
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner" >
+  
+      <div class="carousel-item active">
+        <img src="{{image1[0]}}" class="d-block w-100 imo" alt="">
+      </div>
+       
+      <div class="carousel-item " *ngFor="let item of image1.slice(1); let i=index" >
+        <img  [src]="item" class="d-block w-100 imo" alt="">
+      </div>
+  
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+ </div>
+ 
+<div class="container-data">
+    <div class="content" *ngFor="let item of shoppingData">
+        <div class="image">
+            <img [src]="item.image" alt="">
+        </div>
+        <h5>{{item.name}}</h5>
+        <p>{{item.description}}</p>
+        <p><strong>Price</strong>{{item.Price}}</p>
+        <p>Rating: {{item.rating}}</p>
+        <!-- <button class="Addbtn"  (click)="deleteItem(item)"  class="btn btn-danger"><fa-icon style="font-size: 30px ; color: black;" [icon]="imo1"></fa-icon></button> -->
+        <button class="Addbtn" (click)="addToCart(item)" >Add To Cart</button>
+    </div>
+</div>
+  
+  
+
+

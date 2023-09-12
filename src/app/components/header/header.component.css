@@ -1,0 +1,42 @@
+.se{
+    width: 500px;
+    margin-right: 259px;
+    
+  }
+  .n{
+    padding: 0;
+    
+  }
+  .imo{
+    height: 561px;
+    padding: 23px;
+  }
+  .imag{
+    height: 50px;
+    margin-left: 22px;
+    background-color: white;
+    padding: 0px;
+  }
+  
+  .card-text{
+    font-size: 10px;
+    font-weight: bold;
+  }
+.content-container{
+  margin: 10px;
+}
+.content-part{
+  min-height: 12px;
+}
+.card-body{
+  padding: 0;
+}
+.card{
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .con1{
+    padding: 22px;
+  }

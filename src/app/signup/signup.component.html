@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="text-center">
+                        <h1>Signup</h1>
+                        <h6>Please enter the email && password!</h6>
+                    </div>
+
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Name</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" name="text"  [(ngModel)]="signObj.UserName">
+                          </div>
+
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Email</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" name="email"  [(ngModel)]="signObj.Email">
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Number</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1" name="number"  [(ngModel)]="signObj.Phone">
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="pass" [(ngModel)]="signObj.Password">
+                          </div>
+                        
+                        <button type="submit" class="btn btn-primary" (click)="Sign1()">Signup</button>
+                    </form>
+                    <a routerLink="/login">Already registration now click to Login!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

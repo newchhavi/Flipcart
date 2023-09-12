@@ -1,0 +1,78 @@
+
+
+<style>
+    .container-data{
+    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+}
+.content{
+    /* width: 100px; */
+    border: 1px solid black;
+    padding: 10px 19px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.content img{
+    width: 200px;
+    height: 200px;
+}
+.Addbtn{
+    outline: none;
+    border-radius: 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-title {
+    color: black;
+    text-align: left;
+    /* margin-right: -1977px; */
+}
+.card{
+    margin: auto ;
+    margin-top: 123px;
+}
+.btn-success{
+    margin-left: 81px;
+}
+</style>
+
+<app-header></app-header>
+
+<ng-container>
+    <div class="container">
+                        <div class="container-data">
+                                <div class="content"*ngFor="let item of cartItems" >
+                                    <div class="image">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <h5>{{item.name}}</h5>
+                                    <p>{{item.description}}</p>
+                                    <p><strong>Price</strong>{{item.Price}}</p>
+                                    <button class="Addbtn" (click)="removeFromCart(item)"  class="btn btn-danger"><fa-icon style="font-size: 30px ; color: black;" [icon]="imo1"></fa-icon></button>
+                                    <button (click)="decreaseQuantity(item)">-</button>  {{item.quantity}}  <button (click)="increaseQuantity(item)">+</button>
+                                    
+                                </div>
+                                <h5 class="card-title ">Total Price:{{totalPrice}}</h5>
+                        </div>
+    </div>
+</ng-container>
+
+
+<ng-container>
+    <div class="card bg-dark" style="width: 18rem;">
+        <div class="card-body">
+          <!-- <h5 class="card-title ">Total Price:{{totalPrice}}</h5> -->
+          <a  routerLink="/check-out" class="btn btn-success">Check out</a>
+        </div>
+      </div>
+</ng-container>
